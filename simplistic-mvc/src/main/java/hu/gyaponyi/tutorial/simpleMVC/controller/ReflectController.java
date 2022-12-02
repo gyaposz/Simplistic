@@ -1,4 +1,4 @@
-package hu.gyaponyi.tutorial.simpleMVC.controllers;
+package hu.gyaponyi.tutorial.simpleMVC.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/person")
-public class FirstController
+@RequestMapping("/")
+public class ReflectController
 {
-    @GetMapping("/{id}")
-    public String getPerson(@PathVariable Long id)
+    @GetMapping("/{value}")
+    public String getValue(@PathVariable Long value)
     {
-        return String.valueOf(id);
+        return String.valueOf(value);
     }
 }

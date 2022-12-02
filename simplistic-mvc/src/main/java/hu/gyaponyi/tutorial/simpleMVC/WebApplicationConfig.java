@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"hu.gyaponyi.tutorial"})
-public class ApplicationConfig implements WebMvcConfigurer {
+public class WebApplicationConfig implements WebMvcConfigurer {
 
 }
