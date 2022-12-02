@@ -27,7 +27,14 @@ In order to start build, run integration test and create the war file simply
 For manual testing download Apache Tomcat 10 (please note that Apache Tomcat 9 will not work) deploy the created war
 file into Tomcat's webapps directory, start Tomcat the usual way (`/bin/startup.sh` or `/bin/startup.bat`).
 
-In your favourite browser open `http://localhost:8080/simplistic-context-hierarchy/11`
+In your favourite browser open `http://localhost:8080/simplistic-context-hierarchy/application`
+
+or
+
+`http://localhost:8080/simplistic-context-hierarchy/web`
 
 #### Integration Testing
-Corresponding integration test file can be found under `test/java/...` directory.
+Corresponding integration test(s) file can be found under `test/java/...` directory.
+
+#### Unit Testing
+Corresponding unit test file(s) can be found under `test/java/...` directory.
