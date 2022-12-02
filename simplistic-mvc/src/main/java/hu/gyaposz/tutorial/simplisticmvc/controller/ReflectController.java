@@ -1,4 +1,4 @@
-package hu.gyaponyi.tutorial.simpleMVC.controller;
+package hu.gyaposz.tutorial.simplisticmvc.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
