@@ -2,6 +2,7 @@ package hu.gyaposz.tutorial.simplistic.contexthierarchy;
 
 import hu.gyaposz.tutorial.simplistic.contexthierarchy.application.ServiceContextConfig;
 import hu.gyaposz.tutorial.simplistic.contexthierarchy.web.WebApplicationConfig;
+import hu.gyaposz.tutorial.simplistic.contexthierarchy.web.util.ViewBean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,6 +41,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringJUnitWebConfig
 public class ContextHierarchyIT {
 
+    public static final String AVAILABLE_RESPONSE = "ViewBean is visible";
+    public static final String MISSING_RESPONSE = "ViewBean is not visible";
+
     @Autowired
     WebApplicationContext webApplicationContext;
     private MockMvc mockMvc;
@@ -52,13 +56,32 @@ public class ContextHierarchyIT {
                 .build();
     }
 
+    /**
+     * This test case checks the endpoint that tries to use {@link ViewBean} through Application/root context level.
+     * Since that bean is not visible there, hence the answer.
+     *
+     * @throws Exception if perform and expectations fail.
+     */
     @Test
-    void runTest() throws Exception {
-        final String response = String.format("From application context: %d\nFrom web context: %s", 42, "ViewBean");
-        mockMvc.perform(get("/{value}", 42).accept(MediaType.APPLICATION_JSON))
+    void runTestAgainstApplication() throws Exception {
+        mockMvc.perform(get("/application").accept(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                         status().isOk(),
-                        content().string(response));
+                        content().string(MISSING_RESPONSE));
+    }
+
+    /**
+     * This test case checks the endpoint that tries to use {@link ViewBean} through web context level.
+     * Since that bean is created there, it is visible, hence the answer.
+     *
+     * @throws Exception if perform and expectations fail.
+     */
+    @Test
+    void runTestAgainstWeb() throws Exception {
+        mockMvc.perform(get("/web").accept(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        status().isOk(),
+                        content().string(AVAILABLE_RESPONSE));
     }
 
 }

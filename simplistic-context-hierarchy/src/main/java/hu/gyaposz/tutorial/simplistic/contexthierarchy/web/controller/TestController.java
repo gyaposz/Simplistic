@@ -3,7 +3,6 @@ package hu.gyaposz.tutorial.simplistic.contexthierarchy.web.controller;
 import hu.gyaposz.tutorial.simplistic.contexthierarchy.application.service.CommonService;
 import hu.gyaposz.tutorial.simplistic.contexthierarchy.web.util.ViewBean;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,10 +19,15 @@ public class TestController
         this.viewBean = viewBean;
     }
 
-    @GetMapping("/{value}")
-    public String getValue(@PathVariable Long value)
+    @GetMapping("/application")
+    public String getApplicationValue()
     {
-        return "From application context: " + commonService.convert(value)
-                + "\nFrom web context: "+ viewBean.getContent();
+        return commonService.generate();
+    }
+
+    @GetMapping("/web")
+    public String getWebValue()
+    {
+        return viewBean.getContent();
     }
 }

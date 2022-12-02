@@ -16,9 +16,9 @@ public class CommonService {
         // That Bean is only available in the child/servlet context
         this.viewBean = viewBean;
     }
-    public String convert(Long value) {
+    public String generate() {
         return Optional.ofNullable(viewBean)
                 .map(ViewBean::getContent)
-                .orElse(String.valueOf(value));
+                .orElse("ViewBean is not visible");
     }
 }
