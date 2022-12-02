@@ -1,4 +1,4 @@
-package hu.gyaposz.tutorial.simplisticmvc;
+package hu.gyaposz.tutorial.simplisticmvc.initializer;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -10,11 +10,11 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{WebApplicationConfig.class};
+        return new Class<?>[]{ WebApplicationConfig.class };
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/"};
+        return new String[]{ "/" };
     }
 }

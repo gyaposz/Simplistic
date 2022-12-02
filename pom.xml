@@ -8,7 +8,8 @@
     <artifactId>simplistic</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>simplistic-mvc</module>
+        <module>simplistic-mvc-initializer</module>
+        <module>simplistic-mvc-initializer2</module>
     </modules>
     <packaging>pom</packaging>
     <name>Simplistic</name>
