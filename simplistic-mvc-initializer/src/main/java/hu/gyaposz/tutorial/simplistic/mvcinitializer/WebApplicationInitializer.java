@@ -1,4 +1,4 @@
-package hu.gyaposz.tutorial.simplisticmvc.initializer;
+package hu.gyaposz.tutorial.simplistic.mvcinitializer;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

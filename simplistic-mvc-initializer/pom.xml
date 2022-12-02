@@ -11,5 +11,5 @@
 
     <artifactId>simplistic-mvc-initializer</artifactId>
     <packaging>war</packaging>
-    <name>simplistic-mvc-initializer</name>
+    <name>${artifactId}</name>
 </project>

@@ -1,4 +1,4 @@
-package hu.gyaposz.tutorial.simplisticmvc.initializer2.controller;
+package hu.gyaposz.tutorial.simplistic.mvcinitializer2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

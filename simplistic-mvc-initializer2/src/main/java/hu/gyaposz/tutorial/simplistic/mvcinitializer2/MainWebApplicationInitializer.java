@@ -1,4 +1,4 @@
-package hu.gyaposz.tutorial.simplisticmvc.initializer2;
+package hu.gyaposz.tutorial.simplistic.mvcinitializer2;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletRegistration;
@@ -14,11 +14,10 @@ public class MainWebApplicationInitializer implements WebApplicationInitializer 
 
         AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
 
-        root.scan("hu.gyaposz.tutorial.simplisticmvc.initializer2");
+        root.scan("hu.gyaposz.tutorial.simplistic.mvcinitializer2");
         sc.addListener(new ContextLoaderListener(root));
 
-        ServletRegistration.Dynamic appServlet = sc.addServlet("SpringMVC",
-                new DispatcherServlet(new GenericWebApplicationContext()));
+        ServletRegistration.Dynamic appServlet = sc.addServlet("SpringMVC", new DispatcherServlet(root));
         appServlet.setLoadOnStartup(1);
         appServlet.addMapping("/");
     }

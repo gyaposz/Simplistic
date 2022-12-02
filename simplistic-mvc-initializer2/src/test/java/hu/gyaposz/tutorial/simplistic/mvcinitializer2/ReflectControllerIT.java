@@ -1,6 +1,6 @@
-package hu.gyaposz.tutorial.simplisticmvc.initializer2;
+package hu.gyaposz.tutorial.simplistic.mvcinitializer2;
 
-import hu.gyaposz.tutorial.simplisticmvc.initializer2.controller.ReflectController;
+import hu.gyaposz.tutorial.simplistic.mvcinitializer2.controller.ReflectController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;

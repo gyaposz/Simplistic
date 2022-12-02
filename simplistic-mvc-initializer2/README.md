@@ -5,15 +5,16 @@
 This module is a very limited Spring Web MVC project:
 * It contains `ReflectController` class (being a `RestController`) that answers the `Long` value back it receives as
   request parameter.
-* It contains `WebApplicationConfig` class that implements `WebMvcConfigurer`
 * It contains `MainWebApplicationInitializer` class that extends `WebApplicationInitializer` and gives you the full
 power to configure the servlet and deploy it programmatically.
 
 That is enough to start our very first Spring Web MVC example.
 
 It differs from [simplistic-mvc-initializer](https://github.com/gyaposz/Simplistic/tree/main/simplistic-mvc-initializer)
-that servlet configuration and registration must be done by you. Component scan annotation is not necessary to be added
-on `WebApplicationConfig`, it is taken care of in the Initializer.
+that servlet configuration and registration must be done by you. `WebMvcConfigurer` is not even necessary since
+component scan is taken care of by the Initializer.
+
+Content is similar to examples in https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-servlet
 ### Building
 #### Requirements
 * Java 17

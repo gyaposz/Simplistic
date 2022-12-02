@@ -13,7 +13,9 @@ That is enough to start our very first Spring Web MVC example.
 
 It differs from [simplistic-mvc-initializer2](https://github.com/gyaposz/Simplistic/tree/main/simplistic-mvc-initializer2)
 that servlet configuration and registration does not have to be done by you. On the other hand component scan should be
-initiated and it takes place in `WebApplicationConfig`.
+initiated, and it takes place in `WebApplicationConfig`.
+
+Content is similar to examples in https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-container-config
 ### Building
 #### Requirements
 * Java 17
