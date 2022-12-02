@@ -54,7 +54,7 @@ public class ContextHierarchyIT {
 
     @Test
     void runTest() throws Exception {
-        final String response = String.format("From application context: %s\nFrom web context: %s", 42, "ViewBean");
+        final String response = String.format("From application context: %d\nFrom web context: %s", 42, "ViewBean");
         mockMvc.perform(get("/{value}", 42).accept(MediaType.APPLICATION_JSON))
                 .andExpectAll(
                         status().isOk(),
